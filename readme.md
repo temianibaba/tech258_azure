@@ -21,7 +21,12 @@ Here's an example diagram illustrating Azure regions and Availability Zones:
 ![alt text](images/image2.png)
 
 ## Azure Structure/Organization:
-Azure is structured into various categories of services, including Compute, Storage, Networking, Databases, AI + Machine Learning, Internet of Things (IoT), Developer Tools, and more. These services are organized into different groups within the Azure portal for easy access and management.
+Azure is structured into various categories of services, including Compute, Storage, Networking, Databases, AI + Machine Learning, Internet of Things (IoT), Developer Tools, and more. These services are organized into different groups within the Azure portal for easy access and management. <br>
+**Resource groups** Services are grouped into resource groups, resource group are associated with subscriptions. It is standard to separate resource groups rather than having a rescource group within a resource group.<br>
+**Subscriptions**
+There are limits and quotas in every sub, for example, you can have 50 VM machines *of the same size* in one region, after 50 you get an error.<br>
+**Management groups** These are likened to folders as you can have 6 levels within a management group.<br>
+![alt text](images/image3.png)
 
 ## Types of Services in Azure:
 Azure provides a wide range of services, including:
