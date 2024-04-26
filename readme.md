@@ -59,7 +59,7 @@ Azure DevOps is a set of development tools and services for software development
 The Azure Pricing Calculator is a tool provided by Microsoft to estimate the cost of using Azure services. It allows users to select the Azure services they need, specify usage details (such as region, instance size, and storage capacity), and generate a cost estimate based on current pricing rates. The Pricing Calculator helps users plan and budget for their Azure deployments by providing transparency and visibility into the cost of using Azure services. It also allows users to compare pricing options and optimize their configurations to minimize costs.
 
 ## Azure vs AWS
-- Static IPs
+- Static IPs - after stoping(not terminating) a VM the IP stays the same
 - Internal communication between devices
 - Connecting into instance - many options are given such as Azure Bastion or Azure CLI
 - VNet has to be set up before hand, it is done for us on AWS
