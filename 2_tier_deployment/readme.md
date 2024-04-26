@@ -10,7 +10,7 @@
 ![alt text](images/image3.png)
 #### Tick enable private subnet for private-subnet
 ![alt text](images/image4.png)
-**Why two subnets?** The public one will be for public access via HTTP port 80 and the private subnet is for access for the app instance to the database instance only. This creates greater security for our databases making sure no one else can gain access to them.
+**Why two subnets?** The public one will be for public access via HTTP port 80 and the private subnet is for access for the app instance to the database instance only. This creates greater security for our databases making sure no one else can gain access to them. This also stops address spaces from overlapping.
 ### DONE!! Should look like this
 ![alt text](images/image5.png)
 ## Part two: Set up VMs
@@ -31,5 +31,5 @@
 ![alt text](images/image12.png)
 ![alt text](images/image13.png)
 ![alt text](images/image14.png)
-### No port 3000
-Because we set our network to to have multiple subnets, our instances can communicate between one another with just their IP addresses without needing a port rule to be created.
+### No port 3000 or 27017
+Because we set our network to to have multiple subnets, our instances can communicate between one another with just their IP addresses without needing a port rule to be created. By default the VNet allows any internal traffic on my network regardless of subnet. *One difference between Azure and AWS manually open port on AWS.* Using private IPs is like using inside doors inside of a house and a public IP is like using the front door.

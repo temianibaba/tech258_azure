@@ -9,6 +9,7 @@
     - [Azure](#azure)
     - [Azure DevOps](#azure-devops)
   - [Azure Pricing Calculator:](#azure-pricing-calculator)
+  - [Azure vs AWS](#azure-vs-aws)
 
 ## Basics of Azure:
 Azure is a cloud computing platform and set of services offered by Microsoft. It provides a wide range of cloud services, including computing, storage, networking, databases, analytics, artificial intelligence (AI), Internet of Things (IoT), and more. Azure allows businesses to build, deploy, and manage applications and services through Microsoft's global network of data centers.
@@ -56,3 +57,10 @@ Azure DevOps is a set of development tools and services for software development
 
 ## Azure Pricing Calculator:
 The Azure Pricing Calculator is a tool provided by Microsoft to estimate the cost of using Azure services. It allows users to select the Azure services they need, specify usage details (such as region, instance size, and storage capacity), and generate a cost estimate based on current pricing rates. The Pricing Calculator helps users plan and budget for their Azure deployments by providing transparency and visibility into the cost of using Azure services. It also allows users to compare pricing options and optimize their configurations to minimize costs.
+
+## Azure vs AWS
+- Static IPs
+- Internal communication between devices
+- Connecting into instance - many options are given such as Azure Bastion or Azure CLI
+- VNet has to be set up before hand, it is done for us on AWS
+- You can tag your services in Azure
