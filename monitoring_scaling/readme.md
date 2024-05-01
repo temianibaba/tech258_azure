@@ -37,7 +37,34 @@ Either way you will come to this screen where you have to configure the alert se
 ![alt text](images/image1.png)
 ![alt text](images/image2.png)
 
-# Auto Scaling
-Scaling up and down increases size of VM<br>
+# Scaling 
+Scaling up and down increases size of VM.<br>
 
-Auto scaling increases the number of VMs you can scale out or in<br>
+VM scale sets can increases or decreases the number of VMs you can scale out or in.<br>
+
+This image shows how a VM scale set is made and the thought process behind it.<br>
+By starting off from a basic hard disk file you can create a custom image with the right provisions (files) to run your app in your instance.
+![alt text](images/image6.png)
+### Take aways
+- You need to configure the VM scale set's custom autoscale. According to your own criteria you can set the minimum default and max number of machines, you can also change therequired CPU load to start the autoscaling
+- You need to create a custom image
+- **High availability** comes from your VMs being in different zones at the same time and launches a new instance if there is a lot of traffic. The default/ minimum of 2 VMs gives robustness
+- **High scalability** comes from the VM scale set adapting when the set CPU load is reached
+- This happens within the public subnet
+- An external Load balancer, organises internet traffic depending on the individual VMs capacity.
+- Custom autoscale CPU threshold takes an average and scales instances accordingly.
+
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-10.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
+![alt text](image-11.png)
+![alt text](image-12.png)

@@ -1,5 +1,8 @@
 # User data
-This is an advanced way of creating a virtual machine. By using this option when creating a VM we can run a script without having to SSH into the intance.
+This is an advanced way of creating a virtual machine. By using this option when creating a VM we can run a script without having to SSH into the intance.<br>
+
+Why not have every app instance use user data with full script in there?
+**Slower**, commands still have to be ran when using User Data(upgrade install etc)
 ## Option in Azure
 ![alt text](images/image.png)<br>
 In the blue highlighted box you can paste your script and it will run once the VM is created, everything should be fine **IF YOUR SCRIPT WORKS!!!**
