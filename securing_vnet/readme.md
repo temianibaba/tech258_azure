@@ -19,7 +19,7 @@ On AWS by defualt there is no outbound access, meaning things in our private sub
 **NOTE** The ping stops, because the NVA doesn't know what to do with them, it doesn't know to forward them on.
 5. IP fowarding setup for NIC AND VM (go to NVA networking to enable IP forwarding in NIC)
 ![alt text](images/image4.png)
-SSH into NVA and execute `sudo nano /etc/sysctl.conf` and uncomment net.ipv4.ip_forward. You can use `sysctl net.ipv4.ip_forward` to check we want it = 1
+SSH into NVA and execute `sudo nano /etc/sysctl.conf` and uncomment net.ipv4.ip_forward. You can use `sysctl net.ipv4.ip_forward` to check we want it = 1<br>
 ![alt text](images/image6.png)
 ![alt text](images/image5.png)
 ![alt text](images/image7.png)<br>
