@@ -43,7 +43,7 @@ Scaling up and down increases size of VM.<br>
 VM scale sets can increases or decreases the number of VMs you can scale out or in.<br>
 
 This image shows how a VM scale set is made and the thought process behind it.<br>
-By starting off from a basic hard disk file you can create a custom image with the right provisions (files) to run your app in your instance.
+By starting off from a basic hard disk file you can create a custom image with the right provisions (files) to run your app in your instance.<br>
 ![alt text](images/image6.png)
 ### Take aways
 - You need to configure the VM scale set's custom autoscale. According to your own criteria you can set the minimum default and max number of machines, you can also change therequired CPU load to start the autoscaling
@@ -53,18 +53,55 @@ By starting off from a basic hard disk file you can create a custom image with t
 - This happens within the public subnet
 - An external Load balancer, organises internet traffic depending on the individual VMs capacity.
 - Custom autoscale CPU threshold takes an average and scales instances accordingly.
+## Pre-Requisites
+1. **WORKING SCRIPT:** It is imperative your script to provision your apps instance works otherwise nothing else will work continuing on.
+2. **Robust image:** The image must run smoothly even if there are small mistakes in the user data when running it.
+3. Now you can create a VM scale set with a working script and robust image.
 
+## Setting up a VM Scale Set
+### Go to VM Scale Set resource and click on create
+![alt text](images/image7.png)
+### Make the scale set available in all zones
+![alt text](images/image8.png)
+### Make all instances uniform and start configuring the custom autoscale
+![alt text](images/image9.png)
+![alt text](images/image10.png)
+- **High availability** comes from your VMs being in different zones at the same time and launches a new instance if there is a lot of traffic. The default/ minimum of 2 VMs gives robustness
+- **High scalability** comes from the VM scale set adapting when the set CPU load is reached<br>
+### Set your user name SSH keys and license type
+![alt text](images/image11.png)
+### Choose your disk type
+![alt text](images/image12.png)
+### Configure subnet
+![alt text](images/image13.png)
+![alt text](images/image14.png)
+### Create your load balancer
+![alt text](images/image15.png)
+- An external Load balancer, organises internet traffic depending on the individual VMs capacity. If one instance goes down the load balancer routes traffic to a healthy working instance instead. It is like a traffic warden. It helps the availability of your scale set.
+### Make your scale set auto repair
+![alt text](images/image16.png)
+Where an instance is unhealthy for too long Azure has the capability to take the instance down and set up a new one with an updated user data if changed.
+## Slap a little bit of user data in there
+![alt text](images/image17.png) 
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-10.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-11.png)
-![alt text](image-12.png)
+## Managing intaces
+- **Reimaging:** Captures a new image of the running instances
+- **Upgrade:** Upgrades the user data of any running instances
+
+## Deleting scale set
+![alt text](images/image18.png)
+1. Delete IP address
+2. Delete load balancer
+3. Delete scale set
+
+## Unhealthy instances
+![alt text](images/image19.png)
+When your instance doesn't return 200 it is considered unhealthy this can be by stopping the instance or inputting incorrect user data. <br>
+In this demo I set the repair time to 10 minutes meaning after 10 minutes Azure will close the unhealthy instance and create a new one
+
+## SSH into instance
+Your load balancer connects to your intances starting from port 50000 (this can be changed in load balancer config) so to SSH in would be a bit different<br>
+```bash
+ssh -i ~/.ssh/tech258_muyis_az_key -p 50001 adminuser@4.158.77.222
+```
+This uses the port number of the second instance with my load balance IP address
