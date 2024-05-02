@@ -48,7 +48,7 @@ By starting off from a basic hard disk file you can create a custom image with t
 ### Take aways
 - You need to configure the VM scale set's custom autoscale. According to your own criteria you can set the minimum default and max number of machines, you can also change therequired CPU load to start the autoscaling
 - You need to create a custom image
-- **High availability** comes from your VMs being in different zones at the same time and launches a new instance if there is a lot of traffic. The default/ minimum of 2 VMs gives robustness
+- **High availability** comes from your VMs being in different zones  and launches a new instance if there is a lot of traffic. The default/ minimum of 2 VMs gives robustness
 - **High scalability** comes from the VM scale set adapting when the set CPU load is reached
 - This happens within the public subnet
 - An external Load balancer, organises internet traffic depending on the individual VMs capacity.
@@ -84,11 +84,11 @@ Where an instance is unhealthy for too long Azure has the capability to take the
 ## Slap a little bit of user data in there
 ![alt text](images/image17.png) 
 
-## Managing intaces
+## Managing intances
 - **Reimaging:** Replaces instance
 - **Upgrade:** Upgrades the user data/script of any running instances
 ### Differences
-Upgrading will apply any changes that were applied to the scaleset as a whole. So for example, if you apply a custom script extension to VMSS1 you need to update the VMSS instances in order for that custom script to actually be applied.
+Upgrading will apply any changes that were applied to the scaleset as a whole. So for example, if you apply a new user data you need to upgrade the instances in order for that script to actually be applied.
 
 If you select reimage, it will remove the VMSS instance and replace it with a brand new one. This can be used if you are having issues with a single instance and want to essentially delete it and redeploy it.
 
@@ -108,4 +108,4 @@ Your load balancer connects to your intances starting from port 50000 (this can 
 ```bash
 ssh -i ~/.ssh/tech258_muyis_az_key -p 50001 adminuser@4.158.77.222
 ```
-This uses the port number of the second instance with my load balance IP address
+This uses the port number `-p` of the second instance with my load balance IP address
