@@ -85,8 +85,12 @@ Where an instance is unhealthy for too long Azure has the capability to take the
 ![alt text](images/image17.png) 
 
 ## Managing intaces
-- **Reimaging:** Captures a new image of the running instances
-- **Upgrade:** Upgrades the user data of any running instances
+- **Reimaging:** Replaces instance
+- **Upgrade:** Upgrades the user data/script of any running instances
+### Differences
+Upgrading will apply any changes that were applied to the scaleset as a whole. So for example, if you apply a custom script extension to VMSS1 you need to update the VMSS instances in order for that custom script to actually be applied.
+
+If you select reimage, it will remove the VMSS instance and replace it with a brand new one. This can be used if you are having issues with a single instance and want to essentially delete it and redeploy it.
 
 ## Deleting scale set
 ![alt text](images/image18.png)
