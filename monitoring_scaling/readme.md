@@ -81,7 +81,7 @@ By starting off from a basic hard disk file you can create a custom image with t
 ### Make your scale set auto repair
 ![alt text](images/image16.png)
 Where an instance is unhealthy for too long Azure has the capability to take the instance down and set up a new one with an updated user data if changed.
-## Slap a little bit of user data in there
+## Put some user data in there
 ![alt text](images/image17.png) 
 
 ## Managing intances

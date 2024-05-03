@@ -89,9 +89,10 @@ echo ""
 
 
 **Some extra things we can do for security**
-- STRICTER RULES IN NSG IN PRIVATE SUBNET
+- STRICTER RULES IN NSG IN PRIVATE SUBNET (in this priority)<br>
 Allow SSH from public subnet <br>
 Allow Mongo DB from public subnet <br>
 Allow ICMP from public subnet (optional) <br>
 Deny everything else <br>
-- DELETE PUB IP ON DB VM
+- DELETE PUB IP ON DB NVA (how do we SSH in? scp private key to app instance)
+- Change bind IP setting in Mongo DB to allow connections from the app's subnet or the app VM only 
