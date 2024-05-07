@@ -63,6 +63,7 @@ By starting off from a basic hard disk file you can create a custom image with t
 ![alt text](images/image7.png)
 ### Make the scale set available in all zones
 ![alt text](images/image8.png)
+- Manual scaling can be used when you KNOW there will be a higher usage
 ### Make all instances uniform and start configuring the custom autoscale
 ![alt text](images/image9.png)
 ![alt text](images/image10.png)
