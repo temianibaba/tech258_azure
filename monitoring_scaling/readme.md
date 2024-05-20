@@ -1,4 +1,5 @@
 # Monitoring
+No single point of failure
 ## Different Approaches
 This image shows different approaches to monitoring and the flow of each approach. As shown the best approach would be to automatically scale the VM when an alert is triggered.<br>
 ![alt text](images/image.png)
